@@ -1,0 +1,86 @@
+{{ 'section.custom-slide.css' | asset_url | stylesheet_tag }}
+
+<div class="swiper">
+  <div class="swiper-wrapper">
+    {% for block in section.blocks %}
+      <div class="swiper-slide">
+        <article class="slide-content">
+          <h2>{{ block.settings.slide_text }}</h2>
+        </article>
+        <img src="{{ block.settings.slide_image | image_url }}" alt="slide-img">
+      </div>
+    {% endfor %}
+    ...
+  </div>
+  <div class="swiper-pagination"></div>
+
+  <div class="swiper-button-prev"></div>
+  <div class="swiper-button-next"></div>
+
+  <div class="swiper-scrollbar"></div>
+</div>
+
+<script>
+  const swiper = new Swiper('.swiper', {
+    direction: 'horizontal',
+    loop: true,
+
+    pagination: {
+      el: '.swiper-pagination',
+    },
+
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+
+    scrollbar: {
+      el: '.swiper-scrollbar',
+    },
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Custom slider - Banner",
+  "settings": [
+    {
+      "type": "text",
+      "id": "text",
+      "label": "Esto es el label",
+      "default": "Texto por defecto",
+      "info": "Informacion sobre este setting",
+      "placeholder": "Esto es el placeholder"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "slide",
+      "name": "Slide",
+      "settings": [
+        {
+          "type": "text",
+          "id": "slide_text",
+          "label": "Titulo para el slice"
+        },
+        {
+          "type": "image_picker",
+          "id": "slide_image",
+          "label": "Selecciona tu imagen"
+        },
+        {
+          "type": "text",
+          "id": "link_text",
+          "label": "Link text",
+          "default": "Ver más"
+        },
+        {
+          "type": "url",
+          "id": "link_url",
+          "label": "Url"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
