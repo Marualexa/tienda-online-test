@@ -1,7 +1,44 @@
 {
   "sections": {
     "slider-banner": {
-      "type": "custom-slider"
+      "type": "custom-slider",
+      "blocks": {
+        "slide_wCcHH8": {
+          "type": "slide",
+          "settings": {
+            "slide_text": "SWG",
+            "slide_image": "shopify:\/\/shop_images\/Technology_Artificial_Intelligence_-_AI.jpg",
+            "link_text": "Ver más",
+            "link_url": ""
+          }
+        },
+        "slide_83BDY4": {
+          "type": "slide",
+          "settings": {
+            "slide_text": "SWG",
+            "slide_image": "shopify:\/\/shop_images\/Computing_Versus_Cloud_Computing.jpg",
+            "link_text": "Ver más",
+            "link_url": ""
+          }
+        },
+        "slide_GXhLQz": {
+          "type": "slide",
+          "settings": {
+            "slide_text": "SWG",
+            "slide_image": "shopify:\/\/shop_images\/Artificial_Intelligence__The_Holy_Grail_of_Digital_Marketing.jpg",
+            "link_text": "Ver más",
+            "link_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "slide_wCcHH8",
+        "slide_83BDY4",
+        "slide_GXhLQz"
+      ],
+      "settings": {
+        "text": "Texto por defecto"
+      }
     },
     "rich_text": {
       "type": "rich-text",
@@ -25,6 +62,8 @@
         "text"
       ],
       "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
         "color_scheme": "scheme-1",
         "full_width": true,
         "padding_top": 40,
@@ -36,17 +75,25 @@
       "settings": {
         "title": "Featured products",
         "heading_size": "h2",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
         "collection": "all",
         "products_to_show": 8,
         "columns_desktop": 4,
-        "color_scheme": "scheme-1",
+        "full_width": false,
         "show_view_all": false,
-        "swipe_on_mobile": false,
+        "view_all_style": "solid",
+        "enable_desktop_slider": false,
+        "color_scheme": "scheme-1",
         "image_ratio": "adapt",
+        "image_shape": "default",
         "show_secondary_image": true,
         "show_vendor": false,
         "show_rating": false,
+        "quick_add": "none",
         "columns_mobile": "2",
+        "swipe_on_mobile": false,
         "padding_top": 28,
         "padding_bottom": 36
       }
@@ -84,6 +131,7 @@
         "heading_size": "h2",
         "desktop_layout": "left",
         "mobile_layout": "collage",
+        "card_styles": "product-card-wrapper",
         "color_scheme": "scheme-1",
         "padding_top": 36,
         "padding_bottom": 36
@@ -93,8 +141,9 @@
       "type": "video",
       "settings": {
         "heading": "",
-        "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
         "heading_size": "h1",
+        "enable_video_looping": false,
+        "video_url": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
         "description": "",
         "full_width": false,
         "color_scheme": "scheme-1",
@@ -148,9 +197,9 @@
         "background_style": "none",
         "button_label": "",
         "button_link": "",
-        "swipe_on_mobile": false,
         "color_scheme": "scheme-1",
         "columns_mobile": "1",
+        "swipe_on_mobile": false,
         "padding_top": 36,
         "padding_bottom": 36
       }
