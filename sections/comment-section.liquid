@@ -1,0 +1,70 @@
+{{ 'comment-section.css' | asset_url | stylesheet_tag }}
+
+<main class="content-comment">
+  {% for item in section.blocks %}
+    {% render 'comment-snippet',
+      comment_title: item.settings.idName,
+      comment_image: item.settings.idImage,
+      comment_score: item.settings.idScore,
+      comment_description: item.settings.idDescription
+    %}
+  {% endfor %}
+</main>
+
+{% schema %}
+{
+  "name": "Comments and rating",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "comment-item",
+      "name": "Comment",
+      "settings": [
+        {
+          "type": "text",
+          "id": "idName",
+          "label": "User name"
+        },
+        {
+          "type": "image_picker",
+          "id": "idImage",
+          "label": "Upload your photo"
+        },
+        {
+          "type": "select",
+          "id": "idScore",
+          "label": "choose your score",
+          "options": [
+            {
+              "value": "1",
+              "label": "1"
+            },
+            {
+              "value": "2",
+              "label": "2"
+            },
+            {
+              "value": "3",
+              "label": "3"
+            },
+            {
+              "value": "4",
+              "label": "4"
+            },
+            {
+              "value": "5",
+              "label": "5"
+            }
+          ],
+          "default": "1"
+        },
+        {
+          "type": "text",
+          "id": "idDescription",
+          "label": "Add a comment"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

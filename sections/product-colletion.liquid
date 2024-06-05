@@ -1,0 +1,31 @@
+{{ 'product-colletion.css' | asset_url | stylesheet_tag }}
+
+<main class="cards-container">
+  {% for product in section.blocks %}
+    {% render 'product-snippets',
+      product_image: product.settings.idProduct.featured_media,
+      product_price: product.settings.idProduct.price,
+      product_description: product.settings.idProduct.description
+    %}
+  {% endfor %}
+</main>
+
+{% schema %}
+{
+  "name": "Add product - Products",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "product",
+      "name": "Product",
+      "settings": [
+        {
+          "type": "product",
+          "id": "idProduct",
+          "label": "Select your product"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

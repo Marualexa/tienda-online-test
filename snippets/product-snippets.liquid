@@ -1,0 +1,27 @@
+{% comment %}
+  Accepts:
+  - product_image: {String} string
+  - product_price: {String} string
+  - product_descrition: {String} string
+
+  Usage:
+  {% render 'product-snippets' product_image: product_image, product_price: product_price, product_descrition: product_descrition %}
+{% endcomment %}
+
+<div class="product">
+  <img
+    src="{{ product_image |  image_url  }}"
+    alt="imagenRota"
+    width="940"
+    height="650"
+  >
+  <div class="product-info">
+    <div>
+      <h3>{{ product_price | money }}</h3>
+      <p>{{ product_description }}</p>
+    </div>
+    <button type="submit">
+      <img class="imagen-carrito" src="https://public-joel.s3.amazonaws.com/carrito.png" alt="">
+    </button>
+  </div>
+</div>

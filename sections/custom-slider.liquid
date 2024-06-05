@@ -4,15 +4,16 @@
   <div class="swiper-wrapper">
     {% for block in section.blocks %}
       <div class="swiper-slide">
-        <article class="slide-content">
-          <h2>{{ block.settings.slide_text }}</h2>
-        </article>
+        {% comment %}
+          <article class="slide-content">
+            <h2>{{ block.settings.slide_text }}</h2>
+          </article>
+        {% endcomment %}
         <img src="{{ block.settings.slide_image | image_url }}" alt="slide-img">
       </div>
     {% endfor %}
-    ...
   </div>
-  <div class="swiper-pagination"></div>
+  {% comment %} <div class="swiper-pagination"></div> {% endcomment %}
 
   <div class="swiper-button-prev"></div>
   <div class="swiper-button-next"></div>
@@ -23,11 +24,11 @@
 <script>
   const swiper = new Swiper('.swiper', {
     direction: 'horizontal',
-    loop: true,
+    loop: false,
 
-    pagination: {
-      el: '.swiper-pagination',
-    },
+    // pagination: {
+    //   el: '.swiper-pagination',
+    // },
 
     navigation: {
       nextEl: '.swiper-button-next',
@@ -67,17 +68,6 @@
           "type": "image_picker",
           "id": "slide_image",
           "label": "Selecciona tu imagen"
-        },
-        {
-          "type": "text",
-          "id": "link_text",
-          "label": "Link text",
-          "default": "Ver más"
-        },
-        {
-          "type": "url",
-          "id": "link_url",
-          "label": "Url"
         }
       ]
     }

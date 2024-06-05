@@ -1,0 +1,58 @@
+{% comment %}
+  Accepts:
+  - comment_title: {String} string
+  - comment_image: {String} string
+  - comment_score: {String} string
+  - comment_description: {String} string
+
+  Usage:
+  {%  render 'comment-snippet' comment_title: comment_title, comment_image: comment_image, comment_score: comment_score, comment_description: comment_description %}
+{% endcomment %}
+
+<div class="tarjeta">
+  <div class="titulo">{{ comment_title }}</div>
+
+  <div class="items-porfile">
+    <div class="cuerpo">
+      <div class="cuerpo_img">
+        <img src="{{ comment_image |  image_url  }}" alt="muestra">
+      </div>
+      <div>
+        <svg id="stars" style="display: none;" version="1.1">
+          <symbol id="stars-empty-star" viewBox="0 0 102 18" fill="#F1E8CA">
+            <path d="M9.5 14.25l-5.584 2.936 1.066-6.218L.465 6.564l6.243-.907L9.5 0l2.792 5.657 6.243.907-4.517 4.404 1.066 6.218" />
+          </symbol>
+          <symbol id="stars-full-star" viewBox="0 0 102 18" fill="#D3A81E">
+            <path d="M9.5 14.25l-5.584 2.936 1.066-6.218L.465 6.564l6.243-.907L9.5 0l2.792 5.657 6.243.907-4.517 4.404 1.066 6.218" />
+          </symbol>
+          <symbol id="stars-half-star" viewBox="0 0 102 18" fill="#D3A81E">
+            <use xlink:href="#stars-empty-star" />
+            <path d="M9.5 14.25l-5.584 2.936 1.066-6.218L.465 6.564l6.243-.907L9.5 0l2.792" />
+          </symbol>
+        </svg>
+
+        <!-- 1 Rating -->
+        <svg aria-hidden="true" focusable="false" class="rating">
+            {%- assign upper_limit = comment_score | plus: 0 -%}
+            {% for i in (1..upper_limit) -%}
+              <use xlink:href="#stars-full-star" />
+            {%- endfor %}
+
+            {%- assign upper_menor = 5 | minus: upper_limit -%}
+            {% for i in (1..upper_menor) -%}
+              <use xlink:href="#stars-empty-star" />
+            {%- endfor %}
+
+            {% comment %}
+              <use xlink:href="#stars-full-star" />
+            <use xlink:href="#stars-full-star" />
+
+            <use xlink:href="#stars-empty-star" />
+            <use xlink:href="#stars-empty-star" />
+          {% endcomment %}
+        </svg>
+      </div>
+    </div>
+  </div>
+  <p>{{ comment_description }}</p>
+</div>
