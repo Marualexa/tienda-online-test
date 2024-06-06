@@ -1,13 +1,17 @@
 {{ 'product-colletion.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'new-product-form.js' | asset_url }}" defer="defer"></script>
 
 <main class="cards-container">
-  {% for product in section.blocks %}
-    {% render 'product-snippets',
-      product_image: product.settings.idProduct.featured_media,
-      product_price: product.settings.idProduct.price,
-      product_description: product.settings.idProduct.description
-    %}
-  {% endfor %}
+  <div class="cards">
+    {% for product in section.blocks %}
+      {% render 'product-snippets',
+        product_image: product.settings.idProduct.featured_media,
+        product_price: product.settings.idProduct.price,
+        product_description: product.settings.idProduct.description,
+        product: product.settings.idProduct
+      %}
+    {% endfor %}
+  </div>
 </main>
 
 {% schema %}

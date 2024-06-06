@@ -3,9 +3,10 @@
   - product_image: {String} string
   - product_price: {String} string
   - product_descrition: {String} string
+  - product: {Object} object
 
   Usage:
-  {% render 'product-snippets' product_image: product_image, product_price: product_price, product_descrition: product_descrition %}
+  {% render 'product-snippets' product_image: product_image, product_price: product_price, product_descrition: product_descrition, product: product %}
 {% endcomment %}
 
 <div class="product">
@@ -20,8 +21,29 @@
       <h3>{{ product_price | money }}</h3>
       <p>{{ product_description }}</p>
     </div>
-    <button type="submit">
-      <img class="imagen-carrito" src="https://public-joel.s3.amazonaws.com/carrito.png" alt="">
-    </button>
+
+    <new-product-form data-section-id="{{ section.id }}">
+      {% form 'product',
+        product,
+        id: product_form_id,
+        class: 'form',
+        novalidate: 'novalidate',
+        data-type: 'add-to-cart-form'
+      %}
+        <input
+          type="hidden"
+          name="id"
+          value="{{ product.selected_or_first_available_variant.id }}"
+          class="product-variant-id"
+          {% if product.selected_or_first_available_variant.available == false %}
+            disabled
+          {% endif %}
+        >
+        <!-- form content -->
+        <button type="submit">
+          <img class="imagen-carrito" src="https://public-joel.s3.amazonaws.com/carrito.png" alt="">
+        </button>
+      {% endform %}
+    </new-product-form>
   </div>
 </div>
