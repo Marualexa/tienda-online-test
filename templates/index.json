@@ -34,7 +34,6 @@
     }
   },
   "order": [
-    "image_banner",
     "text_title",
     "products",
     "rich_text",
