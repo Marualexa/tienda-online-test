@@ -83,7 +83,7 @@
           "type": "comment-item",
           "settings": {
             "idName": "Alice123",
-            "idImage": "shopify:\/\/shop_images\/descarga_1.jpg",
+            "idImage": "shopify:\/\/shop_images\/font1.png",
             "idScore": "2",
             "idDescription": "I would definitely recommend these products to anyone looking to improve their business."
           }
@@ -92,7 +92,7 @@
           "type": "comment-item",
           "settings": {
             "idName": "DevGuy87",
-            "idImage": "shopify:\/\/shop_images\/Corporate_Portraits.jpg",
+            "idImage": "shopify:\/\/shop_images\/font2.png",
             "idScore": "4",
             "idDescription": "Continuous integration is seamless and automated testing helps us identify problems quickly."
           }
@@ -101,7 +101,7 @@
           "type": "comment-item",
           "settings": {
             "idName": "TechNinja55",
-            "idImage": "shopify:\/\/shop_images\/Ben_Logan.jpg",
+            "idImage": "shopify:\/\/shop_images\/font3.png",
             "idScore": "5",
             "idDescription": "It has allowed us to implement CI\/CD efficiently and monitor our applications in real time. The interface is intuitive and easy to navigate, and the technical support is excellent."
           }
