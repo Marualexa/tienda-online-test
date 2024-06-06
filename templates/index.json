@@ -1,5 +1,17 @@
 {
   "sections": {
+    "image_banner": {
+      "type": "image-banner",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "Image banner",
+            "heading_size": "h8"
+          }
+        }
+      }
+    },
     "text_title": {
       "type": "rich-text",
       "blocks": {
@@ -34,6 +46,7 @@
     }
   },
   "order": [
+    "image_banner",
     "text_title",
     "products",
     "rich_text",

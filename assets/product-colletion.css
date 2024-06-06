@@ -59,7 +59,7 @@
         width: 100%;
         display: grid;
         grid-template-columns: 1fr 1fr;
-        place-items: center;
+        justify-content: center;
         gap: 10px;
     }
 
