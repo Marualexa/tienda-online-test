@@ -3,34 +3,117 @@
     "text_title": {
       "type": "rich-text",
       "blocks": {
-        "heading": {
+        "heading_Y6HntK": {
           "type": "heading",
           "settings": {
-            "heading": "Comments section",
-            "heading_size": "h1",
-            "text": "Come and buy one of our products"
+            "heading": "Come and buy one of our products",
+            "heading_size": "h2"
           }
         }
+      },
+      "block_order": [
+        "heading_Y6HntK"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
       }
     },
     "products": {
-      "type": "product-colletion"
+      "type": "product-colletion",
+      "blocks": {
+        "product_ync6LL": {
+          "type": "product",
+          "settings": {
+            "idProduct": "paquete-de-20-horas-de-desarrollo"
+          }
+        },
+        "product_g9t46L": {
+          "type": "product",
+          "settings": {
+            "idProduct": "paquete-de-40-horas-de-desarrollo"
+          }
+        },
+        "product_yFJFBq": {
+          "type": "product",
+          "settings": {
+            "idProduct": "paquete-de-60-horas-de-desarrollo"
+          }
+        }
+      },
+      "block_order": [
+        "product_ync6LL",
+        "product_g9t46L",
+        "product_yFJFBq"
+      ],
+      "settings": {
+      }
     },
     "rich_text": {
       "type": "rich-text",
       "blocks": {
-        "heading": {
+        "heading_Mhk83B": {
           "type": "heading",
           "settings": {
-            "heading": "Comments section",
-            "heading_size": "h2",
-            "text": "Opinions of our products"
+            "heading": "Opinions of our products",
+            "heading_size": "h2"
           }
         }
+      },
+      "block_order": [
+        "heading_Mhk83B"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
       }
     },
     "comments": {
-      "type": "comment-section"
+      "type": "comment-section",
+      "blocks": {
+        "comment_item_UAchHE": {
+          "type": "comment-item",
+          "settings": {
+            "idName": "Alice123",
+            "idImage": "shopify:\/\/shop_images\/descarga_1.jpg",
+            "idScore": "1",
+            "idDescription": "I would definitely recommend these products to anyone looking to improve their business."
+          }
+        },
+        "comment_item_4rwHAP": {
+          "type": "comment-item",
+          "settings": {
+            "idName": "DevGuy87",
+            "idImage": "shopify:\/\/shop_images\/Corporate_Portraits.jpg",
+            "idScore": "4",
+            "idDescription": "Continuous integration is seamless and automated testing helps us identify problems quickly."
+          }
+        },
+        "comment_item_gCLLRX": {
+          "type": "comment-item",
+          "settings": {
+            "idName": "TechNinja55",
+            "idImage": "shopify:\/\/shop_images\/Ben_Logan.jpg",
+            "idScore": "5",
+            "idDescription": "It has allowed us to implement CI\/CD efficiently and monitor our applications in real time. The interface is intuitive and easy to navigate, and the technical support is excellent."
+          }
+        }
+      },
+      "block_order": [
+        "comment_item_UAchHE",
+        "comment_item_4rwHAP",
+        "comment_item_gCLLRX"
+      ],
+      "settings": {
+      }
     }
   },
   "order": [
