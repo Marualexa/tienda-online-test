@@ -1,24 +1,5 @@
 {
   "sections": {
-    "image_banner": {
-      "type": "image-banner",
-      "blocks": {
-        "heading": {
-          "type": "heading",
-          "settings": {
-            "heading": "Image banner",
-            "heading_size": "h8"
-          }
-        },
-        "text": {
-          "type": "text",
-          "settings": {
-            "text": "SMG",
-            "text_syle": "body"
-          }
-        }
-      }
-    },
     "text_title": {
       "type": "rich-text",
       "blocks": {

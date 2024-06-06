@@ -35,6 +35,8 @@ if (!customElements.get('new-product-form')) {
                 }
                 config.body = formData;
 
+                // Función que agrega un regalo 
+                // Esta función agregará al carrito un artículo que es gratis cuando el cliente incluya un servicio al mismo.
                 async function giftTobuy() {
                     let formData = {
                         'items': [{
@@ -62,6 +64,8 @@ if (!customElements.get('new-product-form')) {
                     }
                 }
 
+                // Función para limpiar la canasta
+                // Esta función vacía todos los productos del carrito, restringiendo que se puedan agregar dos servicios dentro del mismo.
                 async function clearCart() {
                     try {
                         const response = await fetch(`${window.Shopify.routes.root}cart/clear.js`, {
@@ -70,7 +74,6 @@ if (!customElements.get('new-product-form')) {
                                 'Content-Type': 'application/json'
                             },
                         });
-                        console.log("response clear", response);
                         return await response.json();
                     } catch (error) {
                         console.error('Error clearing cart:', error);
@@ -80,12 +83,11 @@ if (!customElements.get('new-product-form')) {
                 await clearCart();
                 await giftTobuy();
 
-                console.log("antes del add")
-                console.log("entro", formData.get("id"))
+                // Promesa para agregar un producto al carrito
+                // Esta promesa realiza la función de agregar un elemento al carrito.
                 fetch(`${routes.cart_add_url}`, config)
                     .then((response) => response.json())
                     .then((response) => {
-                        console.log("response add", response)
                         if (response.status) {
                             publish(PUB_SUB_EVENTS.cartError, {
                                 source: 'product-form',
@@ -97,8 +99,6 @@ if (!customElements.get('new-product-form')) {
 
                             const soldOutMessage = this.submitButton.querySelector('.sold-out-message');
                             if (!soldOutMessage) return;
-                            // this.submitButton.setAttribute('aria-disabled', true);
-                            // this.submitButtonText.classList.add('hidden');
                             soldOutMessage.classList.remove('hidden');
                             this.error = true;
                             return;
